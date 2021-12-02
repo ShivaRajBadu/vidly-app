@@ -30,7 +30,7 @@ class MovieTable extends React.Component {
             return (
               <tr key={index}>
                 <td>
-                  <a href={`/movie/${movie._id}`}>{movie.title}</a>
+                  <Link to={`/movie/${movie._id}`}>{movie.title}</Link>
                 </td>
                 <td>{movie.genre.name}</td>
                 <td>{movie.numberInStock}</td>
