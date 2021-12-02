@@ -6,6 +6,7 @@ import { paginate } from "../utils/paginate";
 import Genre from "./genre";
 import { getGenres } from "../services/fakeGenreService";
 import _ from "lodash";
+
 class Movies extends Component {
   state = {
     movies: [],
@@ -41,31 +42,33 @@ class Movies extends Component {
     const movies = paginate(sorted, currentPage, pageSize);
 
     return (
-      <div className="d-flex m-2">
-        <div>
-          <Genre
-            items={this.state.genres}
-            selectedItem={this.state.selectedGenre}
-            onItemSelect={this.handleGenreSelect}
-          />
+      <React.Fragment>
+        <div className="d-flex m-2">
+          <div>
+            <Genre
+              items={this.state.genres}
+              selectedItem={this.state.selectedGenre}
+              onItemSelect={this.handleGenreSelect}
+            />
+          </div>
+          <div className="mx-5">
+            <p> showing {filtered.length} movies in the dat abase</p>
+            <MovieTable
+              sortColumn={sortColumn}
+              onSort={this.handleSort}
+              movies={movies}
+              onlike={this.handleLike}
+              onDelete={this.handleDelete}
+            />
+            <Pagination
+              itemsCount={filtered.length}
+              currentPage={currentPage}
+              pageSize={pageSize}
+              onPageChange={this.handlePageChnage}
+            />
+          </div>
         </div>
-        <div className="mx-5">
-          <p> showing {filtered.length} movies in the dat abase</p>
-          <MovieTable
-            sortColumn={sortColumn}
-            onSort={this.handleSort}
-            movies={movies}
-            onlike={this.handleLike}
-            onDelete={this.handleDelete}
-          />
-          <Pagination
-            itemsCount={filtered.length}
-            currentPage={currentPage}
-            pageSize={pageSize}
-            onPageChange={this.handlePageChnage}
-          />
-        </div>
-      </div>
+      </React.Fragment>
     );
   }
   handleSort = (sortColumn) => {
@@ -90,6 +93,7 @@ class Movies extends Component {
     //   movies[index].liked = false;
     // } else movies[index].liked = true;
     this.setState({ movies });
+    console.log("hello");
   };
 }
 

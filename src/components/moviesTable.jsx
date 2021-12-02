@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Like from "./common/like";
 
 class MovieTable extends React.Component {
@@ -28,7 +29,9 @@ class MovieTable extends React.Component {
           {movies.map((movie, index) => {
             return (
               <tr key={index}>
-                <td>{movie.title}</td>
+                <td>
+                  <a href={`/movie/${movie._id}`}>{movie.title}</a>
+                </td>
                 <td>{movie.genre.name}</td>
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
