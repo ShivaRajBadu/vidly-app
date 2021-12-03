@@ -57,7 +57,7 @@ class Movies extends Component {
               sortColumn={sortColumn}
               onSort={this.handleSort}
               movies={movies}
-              onlike={this.handleLike}
+              onLike={this.handleLike}
               onDelete={this.handleDelete}
             />
             <Pagination
@@ -93,7 +93,6 @@ class Movies extends Component {
     //   movies[index].liked = false;
     // } else movies[index].liked = true;
     this.setState({ movies });
-    console.log("hello");
   };
 }
 

@@ -15,6 +15,7 @@ class MovieTable extends React.Component {
   };
   render() {
     const { movies, onDelete, onLike } = this.props;
+
     return (
       <table className="table">
         <thead>
@@ -23,6 +24,8 @@ class MovieTable extends React.Component {
             <th onClick={() => this.raiseSort("genre.name ")}>Genre</th>
             <th onClick={() => this.raiseSort("numberInStock")}>Stock</th>
             <th onClick={() => this.raiseSort("dailyRentalRate")}>Rate</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
