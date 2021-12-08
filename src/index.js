@@ -6,13 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter } from "react-router-dom";
 
-ReactDOM.render( <
-    BrowserRouter >
-    <
-    App / >
-    <
-    /BrowserRouter>,
-    document.getElementById("root")
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

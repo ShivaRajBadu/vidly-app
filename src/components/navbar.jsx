@@ -20,6 +20,9 @@ class NavBar extends React.Component {
             <NavLink className="nav-link" to="/rental">
               Rental
             </NavLink>
+            <NavLink className="nav-link" to="/login">
+              Login
+            </NavLink>
           </div>
         </div>
       </nav>
